@@ -1,0 +1,56 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww12600\viewh19460\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 Assignment: Users (Shell)\
+\
+
+\f1\b \ul Query: Create 3 new users
+\f0\b0 \ulnone \
+Users.objects.create(first_name="User", last_name="One", email_address="userone@gmail.com", age=18)\
+Users.objects.create(first_name="User", last_name="Two", email_address="usertwo@gmail.com", age=20)\
+Users.objects.create(first_name="User", last_name="Three",email_address="userthree@gmail.com", age=30)\
+\
+
+\f1\b \ul Query: Retrieve all the users
+\f0\b0 \ulnone \
+Users.objects.all()\
+\
+
+\f1\b \ul Query: Retrieve the last user
+\f0\b0 \ulnone \
+Users.objects.last()\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \ul \ulc0 Query: Retrieve the last user
+\f0\b0 \ulnone \
+Users.objects.first()\
+\
+
+\f1\b \ul \ulc2 Query: Change the user with id=3 so their last name is Pancakes.\
+
+\f0\b0 \ulnone user_3 = Users.objects.get(id=1)\
+user_3.last_name = "Pancakes\'94\
+user_3.save()\
+\
+
+\f1\b \ul \ulc2 Query: Delete the user with id=2 from the database
+\f0\b0 \ulnone \
+user_2 = Users.objects.get(id=2)\
+user_2.delete()\
+\
+
+\f1\b \ul \ulc2 Query: Get all the users, sorted by their first name
+\f0\b0 \ulnone \
+Users.objects.all().order_by("first_name")\
+\
+
+\f1\b \ul \ulc2 BONUS Query: Get all the users, sorted by their first name in descending order
+\f0\b0 \ulnone \
+Users.objects.all().order_by("-first_name")\
+\
+}
